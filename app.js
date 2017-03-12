@@ -3360,7 +3360,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
   })();
 });
 require.register("components/CardsComp.tag", function(exports, require, module) {
-riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="search"></comp-search> <div class="container"> <div class="cards-list"> <div class="card" each="{displayCards}"> <div class="image"> <img if="{imageUrl}" riot-src="imgs/projects/{imageUrl}" alt="{name}"> </div> <div class="title">{name}</div> <div class="description">{description}</div> <hr> <div class="action-buttons"> <a href="{link}" class="btn"> Visit Project </a> <div class="btn outline" onclick="{openDonationPopup}"> Donate </div> </div> <div class="donation-popup {on: popupOpen}"> <img src="imgs/icon-close.svg" class="close" alt="Close Popup" onclick="{closeDonationPopup}"> <h1>Donate to <b>{name}</b></h1> <div class="list" if="{donation.length > 0}"> <div class="item" each="{donation}"> <div class="title">{symbol} address</div> <div class="address">{address}</div> </div> </div> <h2 if="{donation.length < 1}">No donation addresses. :-(</h2> </div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="search"></comp-search> <div class="container"> <div class="cards-list"> <div class="empty" if="{displayCards.length < 1}"> <h1>No projects found.</h1> </div> <div class="card" each="{displayCards}"> <div class="image"> <img if="{imageUrl}" riot-src="imgs/projects/{imageUrl}" alt="{name}"> </div> <div class="title">{name}</div> <div class="description">{description}</div> <hr> <div class="action-buttons"> <a href="{link}" class="btn"> Visit Project </a> <div class="btn outline" onclick="{openDonationPopup}"> Donate </div> </div> <div class="donation-popup {on: popupOpen}"> <img src="imgs/icon-close.svg" class="close" alt="Close Popup" onclick="{closeDonationPopup}"> <h1>Donate to <b>{name}</b></h1> <div class="list" if="{donation.length > 0}"> <div class="item" each="{donation}"> <div class="title">{symbol} address</div> <div class="address">{address}</div> </div> </div> <h2 if="{donation.length < 1}">No donation addresses. :-(</h2> </div> </div> </div> </div> </div>', '', '', function(opts) {
     this.cards = [];
     this.displayCards = [];
     this.isFilterActive = true;
@@ -3404,26 +3404,31 @@ riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="se
     }.bind(this)
 
     this.fetchCardsData = function () {
-      const API_PATH = 'projects.json';
-      ajax().get(API_PATH).then((res, xhr) => {
+      const PROJECTS_PATH = 'projects.json';
+      const WHITELIST_PATH = 'coins-whitelist.json';
 
-        res.forEach((current) => {
-          let card = this.createCardObj();
+      ajax().get(WHITELIST_PATH).then((whitelist, xhr) => {
+        console.log(whitelist);
+        ajax().get(PROJECTS_PATH).then((res, xhr) => {
 
-          card.name = current.name;
-          card.description = current.description;
-          card.descriptionFull = current.descriptionFull;
-          card.imageUrl = current.imageUrl;
-          card.link = current.link;
-          card.tags = current.tags || [];
-          card.donation = current.donation || [];
+          res.forEach((current) => {
+            let card = this.createCardObj();
 
-          this.cards.push(card);
+            card.name = current.name;
+            card.description = current.description;
+            card.descriptionFull = current.descriptionFull;
+            card.imageUrl = current.imageUrl;
+            card.link = current.link;
+            card.tags = current.tags || [];
+            card.donation = this.handleDonationWhiteList(current.donation || [], whitelist);
+
+            this.cards.push(card);
+          });
+
+          this.displayCards = this.cards.slice(0, 16);
+
+          this.update();
         });
-
-        this.displayCards = this.cards.slice(0, 16);
-
-        this.update();
       });
     }.bind(this)
 
@@ -3443,6 +3448,18 @@ riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="se
     this.closeDonationPopup = function (e) {
       e.item.popupOpen = false;
       this.update();
+    }.bind(this)
+
+    this.handleDonationWhiteList = function(donations, whitelist) {
+      let whitelistDonations = donations.filter((donation) => {
+        if(whitelist.indexOf(donation.symbol.toUpperCase()) > -1) {
+          return true;
+        } else {
+          return false
+        }
+      });
+
+      return whitelistDonations || [];
     }.bind(this)
 });
 });
@@ -3563,5 +3580,99 @@ window.ajax = require("@fdaciuk/ajax");
 
 });})();require('___globals___');
 
-require('initialize');
+'use strict';
+
+/* jshint ignore:start */
+(function () {
+  var WebSocket = window.WebSocket || window.MozWebSocket;
+  var br = window.brunch = window.brunch || {};
+  var ar = br['auto-reload'] = br['auto-reload'] || {};
+  if (!WebSocket || ar.disabled) return;
+  if (window._ar) return;
+  window._ar = true;
+
+  var cacheBuster = function cacheBuster(url) {
+    var date = Math.round(Date.now() / 1000).toString();
+    url = url.replace(/(\&|\\?)cacheBuster=\d*/, '');
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'cacheBuster=' + date;
+  };
+
+  var browser = navigator.userAgent.toLowerCase();
+  var forceRepaint = ar.forceRepaint || browser.indexOf('chrome') > -1;
+
+  var reloaders = {
+    page: function page() {
+      window.location.reload(true);
+    },
+
+    stylesheet: function stylesheet() {
+      [].slice.call(document.querySelectorAll('link[rel=stylesheet]')).filter(function (link) {
+        var val = link.getAttribute('data-autoreload');
+        return link.href && val != 'false';
+      }).forEach(function (link) {
+        link.href = cacheBuster(link.href);
+      });
+
+      // Hack to force page repaint after 25ms.
+      if (forceRepaint) setTimeout(function () {
+        document.body.offsetHeight;
+      }, 25);
+    },
+
+    javascript: function javascript() {
+      var scripts = [].slice.call(document.querySelectorAll('script'));
+      var textScripts = scripts.map(function (script) {
+        return script.text;
+      }).filter(function (text) {
+        return text.length > 0;
+      });
+      var srcScripts = scripts.filter(function (script) {
+        return script.src;
+      });
+
+      var loaded = 0;
+      var all = srcScripts.length;
+      var onLoad = function onLoad() {
+        loaded = loaded + 1;
+        if (loaded === all) {
+          textScripts.forEach(function (script) {
+            eval(script);
+          });
+        }
+      };
+
+      srcScripts.forEach(function (script) {
+        var src = script.src;
+        script.remove();
+        var newScript = document.createElement('script');
+        newScript.src = cacheBuster(src);
+        newScript.async = true;
+        newScript.onload = onLoad;
+        document.head.appendChild(newScript);
+      });
+    }
+  };
+  var port = ar.port || 9485;
+  var host = br.server || window.location.hostname || 'localhost';
+
+  var connect = function connect() {
+    var connection = new WebSocket('ws://' + host + ':' + port);
+    connection.onmessage = function (event) {
+      if (ar.disabled) return;
+      var message = event.data;
+      var reloader = reloaders[message] || reloaders.page;
+      reloader();
+    };
+    connection.onerror = function () {
+      if (connection.readyState) connection.close();
+    };
+    connection.onclose = function () {
+      window.setTimeout(connect, 1000);
+    };
+  };
+  connect();
+})();
+/* jshint ignore:end */
+
+;require('initialize');
 //# sourceMappingURL=app.js.map
