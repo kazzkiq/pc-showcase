@@ -16,7 +16,7 @@
   }
 
   > .logo {
-    width: 140px;
+    width: 180px;
 
     @include viewports(up-to small) {
       margin: 1rem 0;

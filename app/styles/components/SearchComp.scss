@@ -10,6 +10,10 @@
   border-radius: 4px;
   margin: -32px auto 0;
 
+  @include viewports(up-to small) {
+    width: 90%;
+  }
+
   input {
     font-family: $app-font-family;
     width: 100%;
