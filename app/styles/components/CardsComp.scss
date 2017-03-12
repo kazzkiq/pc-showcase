@@ -1,0 +1,80 @@
+@import '../_variables';
+@import '../viewports';
+
+.CardsComp {
+  background: $cards-bg;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  position: relative;
+
+  > .search {
+    //position: absolute;
+    display: none;
+  }
+
+  .cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5rem;
+    justify-content: space-between;
+
+    @include viewports(up-to small) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    > .card {
+      max-width: 23%;
+      min-width: 23%;
+      flex: 1 0 23%;
+      margin: 0 0 5rem;
+      min-height: 250px;
+      padding: 1rem;
+
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 10px 30px rgba(#000, 0.1);
+
+       @include viewports(medium large) {
+        transition: all 0.2s ease-in-out;
+       }
+
+      @include viewports(medium) {
+        max-width: 30%;
+        min-width: 30%;
+        flex: 1 0 30%;
+      }
+
+      @include viewports(up-to small) {
+        max-width: 100%;
+        min-width: 100%;
+        flex: 1 0 100%;
+        margin: 0 0 2rem;
+      }
+
+      &:hover {
+        @include viewports(medium large) {
+          transform: translate3d(0, -10px, 0);
+          box-shadow: 0 20px 40px rgba(#000, 0.05);
+        }
+      }
+
+      .image {
+        background: $silver;
+        border-radius: 3px;
+        min-height: 150px;
+      }
+
+      .title {
+        color: $primary-color;
+        margin: 1rem 0;
+      }
+      
+      .description {
+        color: $grey;
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}

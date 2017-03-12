@@ -1,0 +1,52 @@
+@import '../_variables';
+@import '../viewports';
+
+.TopBarComp {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  height: 140px;
+
+  @include viewports(up-to small) {
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    box-shadow: 0 10px 30px rgba(#000, 0.1);
+  }
+
+  > .logo {
+    width: 140px;
+
+    @include viewports(up-to small) {
+      margin: 1rem 0;
+    }
+  }
+
+  > .menu {
+    display: flex;
+    align-items: center;
+
+    > ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      > li {
+        margin: 0 2rem;
+
+        @include viewports(up-to small) {
+          padding: 1rem 0;
+          text-align: center;
+          font-size: 1.4rem;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
