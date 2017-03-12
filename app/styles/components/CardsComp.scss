@@ -2,7 +2,8 @@
 @import '../viewports';
 
 .CardsComp {
-  background: $cards-bg;
+  background: url(imgs/bg-cardlist.png) $cards-bg;
+  background-size: 77px auto;
   margin-top: 3rem;
   padding: 1rem 0;
   position: relative;

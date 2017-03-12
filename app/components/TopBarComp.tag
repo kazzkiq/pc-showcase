@@ -4,9 +4,9 @@
       <img class="logo" src="imgs/logo.svg" alt="Showcase">
       <nav class="menu">
         <ul>
-          <li><a href="https://github.com/kazzkiq/showcase">Github Project</a></li>
-          <li><a href="https://github.com/kazzkiq/showcase/wiki">Documentation</a></li>
-          <li><a href="https://github.com/kazzkiq/showcase/graphs/contributors">Author</a></li>
+          <li><a href="https://github.com/kazzkiq/pc-showcase">Submit a Project</a></li>
+          <li><a href="https://peercoin.net/">About Peercoin</a></li>
+          <li><a href="https://peerassets.github.io/WhitePaper/">PeerAssets</a></li>
         </ul>
       </nav>
     </header>

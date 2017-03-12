@@ -74,6 +74,7 @@ main {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 9rem;
 
    @include viewports(up-to small) {
     margin: 5rem 0;
@@ -116,5 +117,14 @@ main {
     color: #fff;
     background: darken($primary-color, 10);
     border-color: darken($primary-color, 10);
+  }
+}
+
+.hero-img {
+  width: 413px;
+  margin-bottom: 3rem;
+
+  @include viewports(up-to small) {
+    width: 80%;
   }
 }
