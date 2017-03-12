@@ -5,7 +5,7 @@
       <div class="cards-list">
         <div class="card" each="{ displayCards }">
           <div class="image">
-            <img if="{ imageUrl }" src="{ imageUrl }" alt="{ name }">
+            <img if="{ imageUrl }" src="imgs/projects/{ imageUrl }" alt="{ name }">
           </div>
           <div class="title">{ name }</div>
           <div class="description">{ description }</div>
@@ -88,7 +88,7 @@
      * Modify your JSON AJAX URL and object here
      */
     fetchCardsData () {
-      const API_PATH = '/sample.json';
+      const API_PATH = 'projects.json';
       ajax().get(API_PATH).then((res, xhr) => {
         
         res.forEach((current) => {

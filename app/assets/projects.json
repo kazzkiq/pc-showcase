@@ -1,0 +1,19 @@
+[
+  {
+    "name":"Project Example",
+    "description":"This is a project example description.",
+    "imageUrl":"1.jpeg",
+    "link": "http://google.com/",
+    "tags": ["app", "mobile", "ios", "android"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PF1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX"
+      },
+      {
+        "symbol": "BTC",
+        "address": "1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX"
+      }
+    ]
+  }
+]
