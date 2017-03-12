@@ -3,6 +3,9 @@
     <comp-search ref="search"></comp-search>
     <div class="container">
       <div class="cards-list">
+        <div class="empty" if="{ displayCards.length < 1 }">
+          <h1>No projects found.</h1>
+        </div>
         <div class="card" each="{ displayCards }">
           <div class="image">
             <img if="{ imageUrl }" src="imgs/projects/{ imageUrl }" alt="{ name }">

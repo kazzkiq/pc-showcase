@@ -24,6 +24,18 @@
       padding-right: 1rem;
     }
 
+    > .empty {
+      flex: 1;
+      padding-top: 5rem;
+      min-height: 30rem;
+      text-align: center;
+
+      h1 {
+        font-weight: normal;
+        opacity: 0.4;
+      }
+    }
+
     > .card {
       position: relative;
       max-width: 23%;
