@@ -3404,7 +3404,7 @@ riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="se
     }.bind(this)
 
     this.fetchCardsData = function () {
-      const API_PATH = '/sample.json';
+      const API_PATH = '/pc-showcase/sample.json';
       ajax().get(API_PATH).then((res, xhr) => {
 
         res.forEach((current) => {
