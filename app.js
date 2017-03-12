@@ -3360,7 +3360,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
   })();
 });
 require.register("components/CardsComp.tag", function(exports, require, module) {
-riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="search"></comp-search> <div class="container"> <div class="cards-list"> <div class="card" each="{displayCards}"> <div class="image"> <img if="{imageUrl}" riot-src="{imageUrl}" alt="{name}"> </div> <div class="title">{name}</div> <div class="description">{description}</div> <hr> <div class="action-buttons"> <a href="{link}" class="btn"> Visit Project </a> <div class="btn outline" onclick="{openDonationPopup}"> Donate </div> </div> <div class="donation-popup {on: popupOpen}"> <img src="imgs/icon-close.svg" class="close" alt="Close Popup" onclick="{closeDonationPopup}"> <h1>Donate to <b>{name}</b></h1> <div class="list" if="{donation.length > 0}"> <div class="item" each="{donation}"> <div class="title">{symbol} address</div> <div class="address">{address}</div> </div> </div> <h2 if="{donation.length < 1}">No donation addresses. :-(</h2> </div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="search"></comp-search> <div class="container"> <div class="cards-list"> <div class="card" each="{displayCards}"> <div class="image"> <img if="{imageUrl}" riot-src="imgs/projects/{imageUrl}" alt="{name}"> </div> <div class="title">{name}</div> <div class="description">{description}</div> <hr> <div class="action-buttons"> <a href="{link}" class="btn"> Visit Project </a> <div class="btn outline" onclick="{openDonationPopup}"> Donate </div> </div> <div class="donation-popup {on: popupOpen}"> <img src="imgs/icon-close.svg" class="close" alt="Close Popup" onclick="{closeDonationPopup}"> <h1>Donate to <b>{name}</b></h1> <div class="list" if="{donation.length > 0}"> <div class="item" each="{donation}"> <div class="title">{symbol} address</div> <div class="address">{address}</div> </div> </div> <h2 if="{donation.length < 1}">No donation addresses. :-(</h2> </div> </div> </div> </div> </div>', '', '', function(opts) {
     this.cards = [];
     this.displayCards = [];
     this.isFilterActive = true;
@@ -3404,7 +3404,7 @@ riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="se
     }.bind(this)
 
     this.fetchCardsData = function () {
-      const API_PATH = '/pc-showcase/sample.json';
+      const API_PATH = 'projects.json';
       ajax().get(API_PATH).then((res, xhr) => {
 
         res.forEach((current) => {
@@ -3453,7 +3453,7 @@ riot.tag2('comp-footer', '<div class="container"> <div class="FooterComp"> <div 
 });
 
 require.register("components/MainComp.tag", function(exports, require, module) {
-riot.tag2('comp-main', '<comp-topbar></comp-topbar> <div class="hero"> <img src="imgs/hero-icons.png" class="hero-img" alt="Create anything with PeerAssets!"> <h1>Project showcase.</h1> <h2>You can browse betwen projects, or <a href="#" class="primary">submit</a> your own.</h2> </div> <comp-cards></comp-cards>', '', '', function(opts) {
+riot.tag2('comp-main', '<comp-topbar></comp-topbar> <div class="hero"> <img src="imgs/hero-icons.png" class="hero-img" alt="Create anything with PeerAssets!"> <h1>Project showcase</h1> <h2>You can browse betwen projects, or <a href="#" class="primary">submit</a> your own.</h2> </div> <comp-cards></comp-cards>', '', '', function(opts) {
 });
 });
 
