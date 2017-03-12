@@ -5,7 +5,17 @@
     "descriptionFull":"This is a project talking about some cool stuff, like in koolaid. This is a project talking about some cool stuff, like in koolaid. This is a project talking about some cool stuff, like in koolaid. This is a project talking about some cool stuff, like in koolaid. This is a project talking about some cool stuff, like in koolaid. This is a project talking about some cool stuff, like in koolaid.",
     "imageUrl":"",
     "link":"http://google.com/",
-    "tags": ["wewe", "riri", "tutu", "yoyo", "bubu", "cece"]
+    "tags": ["wewe", "riri", "tutu", "yoyo", "bubu", "cece"],
+    "donation": [
+      {
+        "symbol": "BTC",
+        "address": "A7D7ADF8AF9DF9Z97ZXV79Z"
+      },
+      {
+        "symbol": "BTC",
+        "address": "A7D7ADF8AF9DF9Z97ZXV79Z"
+      }
+    ]
   },
   {
     "name":"Project 2",

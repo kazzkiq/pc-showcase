@@ -11,12 +11,23 @@
           <div class="description">{ description }</div>
           <hr>
           <div class="action-buttons">
-            <div class="btn">
+            <a href="{ link }" class="btn">
               Visit Project
+            </a>
+            <div class="btn outline" onclick="{ openDonationPopup }">
+              Donate
             </div>
-            <div class="btn outline" onclick="{ actionDetails }">
-              See Details
+          </div>
+          <div class="donation-popup {on: popupOpen}">
+            <img src="imgs/icon-close.svg" class="close" alt="Close Popup" onclick="{ closeDonationPopup }">
+            <h1>Donate to <b>{ name }</b></h1>
+            <div class="list" if="{ donation.length > 0 }">
+              <div class="item" each="{ donation }">
+                <div class="title">{ symbol } address</div>
+                <div class="address">{ address }</div>
+              </div>
             </div>
+            <h2 if="{ donation.length < 1 }">No donation addresses. :-(</h2>
           </div>
         </div>
       </div>
@@ -39,7 +50,8 @@
         descriptionFull: null,
         imageUrl: null,
         link: null,
-        tags: []
+        tags: [],
+        donation: [],
       }
     }
 
@@ -89,6 +101,7 @@
           card.imageUrl = current.imageUrl;
           card.link = current.link;
           card.tags = current.tags || [];
+          card.donation = current.donation || [];
 
           this.cards.push(card);
         });
@@ -108,6 +121,16 @@
       let comp = document.createElement('COMP-SIDEBAR');
       document.body.append(comp);
       riot.mount(comp, item);
+    }
+
+    openDonationPopup (e) {
+      e.item.popupOpen = true;
+      this.update();
+    }
+
+    closeDonationPopup (e) {
+      e.item.popupOpen = false;
+      this.update();
     }
   </script>
 </comp-cards>
