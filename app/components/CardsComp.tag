@@ -88,27 +88,32 @@
      * Modify your JSON AJAX URL and object here
      */
     fetchCardsData () {
-      const API_PATH = 'projects.json';
-      ajax().get(API_PATH).then((res, xhr) => {
-        
-        res.forEach((current) => {
-          let card = this.createCardObj();
+      const PROJECTS_PATH = 'projects.json';
+      const WHITELIST_PATH = 'coins-whitelist.json';
 
-          // This is where you bind your objects fetched from JSON
-          card.name = current.name;
-          card.description = current.description;
-          card.descriptionFull = current.descriptionFull;
-          card.imageUrl = current.imageUrl;
-          card.link = current.link;
-          card.tags = current.tags || [];
-          card.donation = current.donation || [];
+      ajax().get(WHITELIST_PATH).then((whitelist, xhr) => {
+        console.log(whitelist);
+        ajax().get(PROJECTS_PATH).then((res, xhr) => {
+          
+          res.forEach((current) => {
+            let card = this.createCardObj();
 
-          this.cards.push(card);
+            // This is where you bind your objects fetched from JSON
+            card.name = current.name;
+            card.description = current.description;
+            card.descriptionFull = current.descriptionFull;
+            card.imageUrl = current.imageUrl;
+            card.link = current.link;
+            card.tags = current.tags || [];
+            card.donation = this.handleDonationWhiteList(current.donation || [], whitelist);
+
+            this.cards.push(card);
+          });
+
+          this.displayCards = this.cards.slice(0, 16);
+
+          this.update();
         });
-
-        this.displayCards = this.cards.slice(0, 16);
-
-        this.update();
       });
     }
 
@@ -131,6 +136,18 @@
     closeDonationPopup (e) {
       e.item.popupOpen = false;
       this.update();
+    }
+
+    handleDonationWhiteList(donations, whitelist) {
+      let whitelistDonations = donations.filter((donation) => {
+        if(whitelist.indexOf(donation.symbol.toUpperCase()) > -1) {
+          return true;
+        } else {
+          return false
+        }
+      });
+
+      return whitelistDonations || [];
     }
   </script>
 </comp-cards>
