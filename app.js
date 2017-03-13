@@ -3425,6 +3425,8 @@ riot.tag2('comp-cards', '<div class="CardsComp" ref="comp"> <comp-search ref="se
             this.cards.push(card);
           });
 
+          this.cards.reverse();
+
           this.displayCards = this.cards.slice(0, 16);
 
           this.update();

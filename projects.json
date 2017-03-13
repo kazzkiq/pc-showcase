@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "name":"Project Example",
-    "description":"This is a project example description.",
-    "imageUrl":"1.jpeg",
-    "link": "http://google.com/",
-    "tags": ["app", "mobile", "ios", "android"],
+    "name":"Peercoin Projects",
+    "description":"A responsive showcase for Peercoin/PeerAssets projects!",
+    "imageUrl":"1.png",
+    "link": "https://kazzkiq.github.io/pc-showcase/",
+    "tags": ["app", "responsive", "showcase", "web", "peerassets"],
     "donation": [
       {
         "symbol": "PPC",
-        "address": "PF1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX"
+        "address": "PKrDkN6STBRgpPgq9hLEVbgyxy2QXNsqaZ"
       },
       {
         "symbol": "BTC",
-        "address": "1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX"
+        "address": "1ASsGfGXXVzeh1ExwzaFLPjTTT11rq2PzN"
       }
     ]
   }
