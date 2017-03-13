@@ -12,7 +12,7 @@ To submit a project to the showcase, follow these steps:
 
 The image must be of those formats: **`JPG`**, **`PNG`** or **`SVG`**, and must cointain a resolution of **`600x400px`**.
 
-Values accepted for donation are: **`PPC`** and/or **`BTC`**.
+Coins accepted for donation are: **`PPC`** and/or **`BTC`**.
 
 The max number of tags per project is **five**.
 
