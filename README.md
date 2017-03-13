@@ -10,9 +10,9 @@ To submit a project to the showcase, follow these steps:
 2. Add your project **at the end** of `projects.json` file,
 3. Add your project image at the `/imgs/projects` folder.
 
-The image must be of those formats: **`JPG`**, **`PNG`** or **`SVG`**, and must cointain a resolution of **`600x400px`**.
+The image must be: **`JPG`**, **`PNG`** or **`SVG`**, and must cointain a resolution of **`600x400px`**.
 
-Coins accepted for donation are: **`PPC`** and/or **`BTC`**.
+Coins accepted for donation are: **`PPC`** and **`BTC`**.
 
 The max number of tags per project is **five**.
 
