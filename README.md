@@ -14,10 +14,6 @@ The image must be of those formats: **`JPG`**, **`PNG`** or **`SVG`**, and must 
 
 Values accepted for donation are: **`PPC`** and/or **`BTC`**.
 
-You can find an example of your project properties on the `projects.json` file itself.
-
-If you have any question, feel free to open an issue.
-
 The max number of tags per project is **five**.
 
 Here is a sample of the snipped one would add to `projects.json` file:
@@ -42,6 +38,9 @@ Here is a sample of the snipped one would add to `projects.json` file:
   ]
 }
 ```
+
+If you have any question, feel free to open an issue.
+
 
 ### Developing / Contributing
 
