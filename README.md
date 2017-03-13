@@ -6,8 +6,8 @@ This project is aimed at showing interesting blockchain-related projects. Users 
 
 To submit a project to the showcase, follow these steps:
 
-1. Fork this repository,
-2. Add your project **at the end** of `projects.json` file,
+1. Fork this repository;
+2. Add your project **at the end** of `projects.json` file;
 3. Add your project image at the `/imgs/projects` folder.
 
 The image must be: **`JPG`**, **`PNG`** or **`SVG`**, and must cointain a resolution of **`600x400px`**.
@@ -46,8 +46,8 @@ If you have any question, feel free to open an issue.
 
 In order to run the project locally, you must follow these steps:
 
-1. Make sure to have Node.js installed,
-2. Close this repo,
-3. Run `npm install`,
-4. Run `npm start` to lift server at **localhost:3333**
+1. Make sure to have Node.js installed;
+2. Clone this repo;
+3. Run `npm install`;
+4. Run `npm start` to lift server at **localhost:3333**;
 5. Run `npm build` to build a production version. 
