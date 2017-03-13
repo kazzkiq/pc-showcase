@@ -113,6 +113,9 @@
             this.cards.push(card);
           });
 
+          // Make projects order decrescent
+          this.cards.reverse();
+
           this.displayCards = this.cards.slice(0, 16);
 
           this.update();
