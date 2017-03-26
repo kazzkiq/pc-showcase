@@ -16,5 +16,23 @@
         "address": "1ASsGfGXXVzeh1ExwzaFLPjTTT11rq2PzN"
       }
     ]
+  },
+  {
+    "id": 2,
+    "name":"peercoin_rpc",
+    "description":"Peercoin_rpc is a simple Python library made for communication with Peercoin daemon via JSON-RPC protocol.",
+    "imageUrl":"",
+    "link": "https://github.com/peerchemist/peercoin_rpc",
+    "tags": ["api", "python", "json-rpc", "peercoin"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PNT5JUEPeof3p5uNxr45Bcrjm29S1P9DWA"
+      },
+      {
+        "symbol": "BTC",
+        "address": "19vdDaxZsfqF8SJAcE2zZNa7sAWSiQyfxa"
+      }
+    ]
   }
 ]
