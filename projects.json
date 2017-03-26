@@ -3,7 +3,7 @@
     "id": 1,
     "name":"Peercoin Projects",
     "description":"A responsive showcase for Peercoin/PeerAssets projects!",
-    "imageUrl":"",
+    "imageUrl":"1.png",
     "link": "https://github.com/kazzkiq/pc-showcase",
     "tags": ["app", "responsive", "showcase", "web", "peerassets"],
     "donation": [
