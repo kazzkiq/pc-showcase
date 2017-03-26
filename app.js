@@ -3472,8 +3472,9 @@ riot.tag2('comp-footer', '<div class="container"> <div class="FooterComp"> <div 
 });
 
 require.register("components/MainComp.tag", function(exports, require, module) {
-riot.tag2('comp-main', '<comp-topbar></comp-topbar> <div class="hero"> <img src="imgs/hero-icons.png" class="hero-img" alt="Create anything with PeerAssets!"> <h1>Project showcase</h1> <h2>You can browse betwen projects, or <a href="https://github.com/kazzkiq/pc-showcase#submit-a-project" class="primary">submit</a> your own.</h2> </div> <comp-cards></comp-cards>', '', '', function(opts) {
+riot.tag2('comp-main', '<comp-topbar></comp-topbar> <div class="hero"> <img src="imgs/hero-icons.png" class="hero-img" alt="Create anything with PeerAssets!"> <h1>Project showcase</h1> <h2>You can browse projects, or <a href="https://github.com/kazzkiq/pc-showcase#submit-a-project" class="primary">submit</a> your own.</h2> </div> <comp-cards></comp-cards>', '', '', function(opts) {
 });
+
 });
 
 require.register("components/SearchComp.tag", function(exports, require, module) {
@@ -3541,7 +3542,7 @@ riot.tag2('comp-sidebar', '<div class="SideBarComp"> <div class="overlay {on: op
 });
 
 require.register("components/TopBarComp.tag", function(exports, require, module) {
-riot.tag2('comp-topbar', '<div class="container"> <header class="TopBarComp"> <img class="logo" src="imgs/logo.svg" alt="Showcase"> <nav class="menu"> <ul> <li><a href="https://github.com/kazzkiq/pc-showcase#submit-a-project">Submit a Project</a></li> <li><a href="https://peercoin.net/">About Peercoin</a></li> <li><a href="https://peerassets.github.io/WhitePaper/">PeerAssets</a></li> </ul> </nav> </header> </div>', '', '', function(opts) {
+riot.tag2('comp-topbar', '<div class="container"> <header class="TopBarComp"> <a class="logo" href="{window.location.href}"> <img src="imgs/logo.svg" alt="Showcase"> </a> <nav class="menu"> <ul> <li><a href="https://github.com/kazzkiq/pc-showcase#submit-a-project">Submit a Project</a></li> <li><a href="https://peercoin.net/">About Peercoin</a></li> <li><a href="https://peerassets.github.io/WhitePaper/">PeerAssets</a></li> </ul> </nav> </header> </div>', '', '', function(opts) {
 });
 });
 
