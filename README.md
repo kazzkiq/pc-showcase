@@ -10,13 +10,14 @@ To submit a project to the showcase, follow these steps:
 2. Add your project **at the end** of `projects.json` file;
 3. Add your project image at the `/imgs/projects` folder.
 
-The image must be: **`JPG`**, **`PNG`** or **`SVG`**, and must cointain a resolution of **`600x400px`**.
+#### In order to get your PR accepted, some rules must be applied:
 
-Coins accepted for donation are: **`PPC`** and **`BTC`**.
+- Your project image must be: **`JPG`**, **`PNG`** or **`SVG`**, and must cointain a resolution of **`600x400px`**.
+- Coins accepted for donation are: **`PPC`** and **`BTC`**.
+- The max number of tags per project is **five**.
+- A project must be submitted only by its owner (or with explicitly approval of owner). If you found a cool project related to Peercoin, first ask for owner permission before submitting it here.
 
-The max number of tags per project is **five**.
-
-Here is a sample of the snipped one would add to `projects.json` file:
+Here is a sample of the snippet one would add to `projects.json` file:
 
 ```json
 {
