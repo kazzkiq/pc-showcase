@@ -22,6 +22,7 @@
     @include viewports(up-to small) {
       padding-left: 1rem;
       padding-right: 1rem;
+      flex-direction: column;
     }
 
     > .empty {
@@ -41,6 +42,8 @@
       max-width: 23%;
       min-width: 23%;
       flex: 1 0 23%;
+      display: flex;
+      flex-direction: column;
       margin: 0 0 5rem;
       min-height: 250px;
       padding: 1rem;
@@ -62,8 +65,9 @@
       @include viewports(up-to small) {
         max-width: 100%;
         min-width: 100%;
-        flex: 1 0 100%;
         margin: 0 0 2rem;
+        display: block;
+        flex: 1;
       }
 
       &:hover {
@@ -75,7 +79,8 @@
 
       > .image {
         position: relative;
-        background: $silver;
+        background: url(imgs/icon-no-img.svg) no-repeat center center $silver;
+        background-size: 116px auto;
         border-radius: 3px;
         height: 150px;
         overflow: hidden;
@@ -98,6 +103,7 @@
       }
       
       > .description {
+        flex: 1;
         color: $grey;
         font-size: 1.3rem;
         line-height: 2rem;
@@ -113,6 +119,7 @@
 
         .btn + .btn {
           margin-top: 0;
+          cursor: pointer;
         }
       }
 
