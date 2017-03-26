@@ -1,7 +1,9 @@
 <comp-topbar>
  <div class="container">
     <header class="TopBarComp">
-      <img class="logo" src="imgs/logo.svg" alt="Showcase">
+      <a class="logo" href="{ window.location.href }">
+        <img src="imgs/logo.svg" alt="Showcase">
+      </a>
       <nav class="menu">
         <ul>
           <li><a href="https://github.com/kazzkiq/pc-showcase#submit-a-project">Submit a Project</a></li>
