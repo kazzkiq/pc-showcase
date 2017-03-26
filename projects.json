@@ -34,5 +34,19 @@
         "address": "19vdDaxZsfqF8SJAcE2zZNa7sAWSiQyfxa"
       }
     ]
+  },
+  {
+    "id": 3,
+    "name":"The Great Library of Peercoin",
+    "description":"Human Knowledge and Expression on the Blockchain",
+    "imageUrl":"3.jpg",
+    "link": "https://github.com/belovachap/peercoin-library",
+    "tags": ["books", "reading", "library"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PB1k5mHghU75jTsGYedvrrxupx341E16pb"
+      }
+    ]
   }
 ]
