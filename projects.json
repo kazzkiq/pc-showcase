@@ -53,7 +53,7 @@
     "id": 4,
     "name":"Peerbox",
     "description":"Run full Peercoin node in seconds.",
-    "imageUrl":"4.jpg",
+    "imageUrl":"4.png",
     "link": "https://github.com/peerchemist/peerbox",
     "tags": ["raspberry", "pi", "node"],
     "donation": [
