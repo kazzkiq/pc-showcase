@@ -48,5 +48,19 @@
         "address": "PB1k5mHghU75jTsGYedvrrxupx341E16pb"
       }
     ]
+  },
+  {
+    "id": 4,
+    "name":"Peerbox",
+    "description":"Run full Peercoin node in seconds.",
+    "imageUrl":"4.jpg",
+    "link": "https://github.com/peerchemist/peerbox",
+    "tags": ["raspberry", "pi", "node"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PLtwXrKF2HHaKBNNn4pfLBDSoRCo6qKnCa"
+      }
+    ]
   }
 ]
