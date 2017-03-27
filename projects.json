@@ -62,5 +62,19 @@
         "address": "PLtwXrKF2HHaKBNNn4pfLBDSoRCo6qKnCa"
       }
     ]
+  },
+  {
+    "id": 5,
+    "name":"peercoin.chat",
+    "description":"Central communication hub of Peercoin community.",
+    "imageUrl":"5.png",
+    "link": "https://peercoin.chat",
+    "tags": ["peercoin", "community", "chat"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PPchatrw5hV1y3JUU2kxyL4LQccprbp8FX"
+      }
+    ]
   }
 ]
