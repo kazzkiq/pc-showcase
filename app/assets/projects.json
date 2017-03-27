@@ -67,7 +67,7 @@
     "id": 5,
     "name":"peercoin.chat",
     "description":"Central communication hub of Peercoin community.",
-    "imageUrl":"5.jpg",
+    "imageUrl":"5.png",
     "link": "https://peercoin.chat",
     "tags": ["peercoin", "community", "chat"],
     "donation": [
