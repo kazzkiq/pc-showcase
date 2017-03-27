@@ -52,3 +52,8 @@ In order to run the project locally, you must follow these steps:
 3. Run `npm install`;
 4. Run `npm start` to lift server at **localhost:3333**;
 5. Run `npm build` to build a production version. 
+
+
+### Delivering to projects.peercoin.net
+
+A server-side script pulls this git every 30 minutes. In order to update the production website, simply deploy changes to `gh-pages` branch and wait until the next server pull.
