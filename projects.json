@@ -76,5 +76,33 @@
         "address": "PPchatrw5hV1y3JUU2kxyL4LQccprbp8FX"
       }
     ]
+  },
+  {
+    "id": 6,
+    "name":"PeerAssets",
+    "description":"Simple blockchain based protocol which enables peers to issue and transact with tokens.",
+    "imageUrl":"6.png",
+    "link": "https://github.com/peerassets",
+    "tags": ["blockchain", "tokens", "DAC", "voting"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PAdonateFczhZuKLkKHozrcyMJW7Y6TKvw"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name":"Docker-peercoind",
+    "description":"A peercoind docker image.",
+    "imageUrl":"",
+    "link": "https://github.com/peerchemist/docker-peercoind",
+    "tags": ["peercoin", "daemon", "docker", "node"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PPBxRaHmrNC4pP6PzCDC2httLLVBTQ1n8U"
+      }
+    ]
   }
 ]
