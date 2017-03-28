@@ -90,5 +90,19 @@
         "address": "PAdonateFczhZuKLkKHozrcyMJW7Y6TKvw"
       }
     ]
+  },
+  {
+    "id": 7,
+    "name":"Docker-peercoind",
+    "description":"A peercoind docker image.",
+    "imageUrl":"",
+    "link": "https://github.com/peerchemist/docker-peercoind",
+    "tags": ["peercoin", "daemon", "docker", "node"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PPBxRaHmrNC4pP6PzCDC2httLLVBTQ1n8U"
+      }
+    ]
   }
 ]
