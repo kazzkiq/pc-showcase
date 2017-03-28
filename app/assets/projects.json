@@ -76,5 +76,19 @@
         "address": "PPchatrw5hV1y3JUU2kxyL4LQccprbp8FX"
       }
     ]
+  },
+  {
+    "id": 6,
+    "name":"PeerAssets",
+    "description":"Simple blockchain based protocol which enables peers to issue and transact with tokens.",
+    "imageUrl":"6.png",
+    "link": "https://github.com/peerassets",
+    "tags": ["blockchain", "tokens", "DAC", "voting"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PAdonateFczhZuKLkKHozrcyMJW7Y6TKvw"
+      }
+    ]
   }
 ]
