@@ -104,5 +104,19 @@
         "address": "PPBxRaHmrNC4pP6PzCDC2httLLVBTQ1n8U"
       }
     ]
+  },
+    {
+    "id": 8,
+    "name":"Pycoin",
+    "description":" Python-based Bitcoin and alt-coin utility library.",
+    "imageUrl":"",
+    "link": "https://github.com/peerchemist/pycoin",
+    "tags": ["peercoin", "utility", "python"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PPBxRaHmrNC4pP6PzCDC2httLLVBTQ1n8U"
+      }
+    ]
   }
 ]
