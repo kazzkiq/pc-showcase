@@ -118,5 +118,33 @@
         "address": "PPBxRaHmrNC4pP6PzCDC2httLLVBTQ1n8U"
       }
     ]
+  },
+    {
+    "id": 8,
+    "name":"Pycoin",
+    "description":" Python-based Bitcoin and alt-coin utility library.",
+    "imageUrl":"",
+    "link": "https://github.com/peerchemist/pycoin",
+    "tags": ["peercoin", "utility", "python"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PPBxRaHmrNC4pP6PzCDC2httLLVBTQ1n8U"
+      }
+    ]
+  },
+    {
+    "id": 9,
+    "name":"Peercoin-Wisdom",
+    "description":"A portal for financial analysis.",
+    "imageUrl":"9.png",
+    "link": "https://github.com/saeveritt/peercoinwisdom",
+    "tags": ["peercoin", "wisdom", "ppcw", "saeveritt"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PE6gEuCMi3iHvUJaM57SsBGdCRUJqfTvDW"
+      }
+    ]
   }
 ]
