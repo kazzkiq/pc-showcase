@@ -109,6 +109,19 @@
         line-height: 2rem;
       }
 
+      > .donation-value {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        width: 30%;
+        font-size: 1.3rem;
+        color: $primary-color;
+        font-weight: bold;
+        background: rgba($primary-color, 0.2);
+        border-radius: 4px;
+        display: none !important; // Hiding for now
+      }
+
       > .action-buttons {
         display: flex;
         justify-content: space-between;

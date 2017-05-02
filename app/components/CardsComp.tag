@@ -12,6 +12,7 @@
           </div>
           <div class="title">{ name }</div>
           <div class="description">{ description }</div>
+          <div class="donation-value">{ donationTotal }</div>
           <hr>
           <div class="action-buttons">
             <a href="{ link }" class="btn">
@@ -25,9 +26,9 @@
             <img src="imgs/icon-close.svg" class="close" alt="Close Popup" onclick="{ closeDonationPopup }">
             <h1>Donate to <b>{ name }</b></h1>
             <div class="list" if="{ donation.length > 0 }">
-              <div class="item" each="{ donation }">
-                <div class="title">{ symbol } address</div>
-                <div class="address">{ address }</div>
+              <div class="item" each="{ donate in donation }">
+                <div class="title">{ donate.symbol } address</div>
+                <div class="address">{ donate.address }</div>
               </div>
             </div>
             <h2 if="{ donation.length < 1 }">No donation addresses. :-(</h2>
@@ -65,7 +66,6 @@
      * reflect same height and items per line.
      */
      onscroll(e) {
-       console.log(this.isFilterActive);
       if(!this.isFilterActive) {
         return;
       }
@@ -95,7 +95,6 @@
       const WHITELIST_PATH = 'coins-whitelist.json';
 
       ajax().get(WHITELIST_PATH).then((whitelist, xhr) => {
-        console.log(whitelist);
         ajax().get(PROJECTS_PATH).then((res, xhr) => {
           
           res.forEach((current) => {
@@ -117,7 +116,7 @@
           this.cards.reverse();
 
           this.displayCards = this.cards.slice(0, 16);
-
+          this.handleDonationValues(this.cards);
           this.update();
         });
       });
@@ -154,6 +153,37 @@
       });
 
       return whitelistDonations || [];
+    }
+
+    handleDonationValues (cards) {
+      cards.forEach((card) => {
+        this.printDonationValues(card);
+      });
+    }
+
+    printDonationValues (card) {
+      const API_KEY = 'da561a12d3b6';
+      const DONATIONS_API_URL_BTC = 'https://chainz.cryptoid.info/btc/api.dws?q=getbalance&key=' + API_KEY + '&a=';
+      const DONATIONS_API_URL_PPC = 'https://chainz.cryptoid.info/ppc/api.dws?q=getbalance&key=' + API_KEY + '&a=';
+      
+      // Default value is zero
+      if(!card.donationTotal) {
+        card.donationTotal = 0;
+      }
+
+      card.donation.forEach((donate) => {
+        if(donate.symbol == "BTC") {
+          ajax().get(DONATIONS_API_URL_BTC + donate.address).then((res, xhr) => {
+            card.donationTotal += res;
+            this.update();
+          });
+        } else if (donate.symbol == "PPC") {
+          ajax().get(DONATIONS_API_URL_PPC + donate.address).then((res, xhr) => {
+            card.donationTotal += res;
+            this.update();
+          });
+        }
+      });
     }
   </script>
 </comp-cards>
