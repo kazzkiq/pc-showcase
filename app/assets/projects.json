@@ -132,5 +132,19 @@
         "address": "PE6gEuCMi3iHvUJaM57SsBGdCRUJqfTvDW"
       }
     ]
+  },
+  {
+    "id": 10,
+    "name":"peercoin-php-rpc",
+    "description":"Simple and minimal PHP library made for communication with peercoind via JSON-RPC protocol.",
+    "imageUrl":"",
+    "link": "https://github.com/peercoin/peercoin-php-rpc",
+    "tags": ["peercoin", "php", "json-rpc", "lib"],
+    "donation": [
+      {
+        "symbol": "PPC",
+        "address": "PNZ15zyXqNBwXGaxAeGtNTBCjNUWgGDy67"
+      }
+    ]
   }
 ]
